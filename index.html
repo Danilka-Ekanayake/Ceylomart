@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | CeyloMart</title>
+  <link rel="stylesheet" href="Ceylomart.css" />
+  <link rel="icon" type="image/png" href="Pictures/Ceylomart Logo.png" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+<header class="header" data-aos="fade-down">
+  <div class="logo">
+    <a href="index.html"><img src="Pictures/Ceylomart Logo.png" alt="CeyloMart Logo" /></a>
+    <span>CeyloMart</span>
+  </div>
+
+  <!--Hamburger -->
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav class="nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Shop.html">Shop</a></li>
+      <li><a href="Categories.html">Categories</a></li>
+      <li><a href="About Us.html">About Us</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-right">
+    <input class="Search" placeholder="Search..." />
+    <button class="cart-btn" title="Cart">
+      <i class="fa-solid fa-cart-shopping"></i>
+    </button>
+  </div>
+</header>
+
+
+  <section id="home" class="hero">
+    <h2 data-aos="fade-down">Welcome to</h2> <h1 data-aos="fade-up">CeyloMart</h1>
+    <p data-aos="zoom-in">Discover amazing products at unbeatable prices — your one-stop shop for everything you need.</p>
+    <div class="hero-buttons">
+    <a href="Shop.html"><button class="btn" >Shop Now</button></a>
+    <a href="About Us.html"><button class="btn2">Learn More</button></a>
+    </div>
+  </section>
+<section class="features">
+    <div class="feature-box" data-aos="fade-up">
+    <div class="icon-circle teal">
+      <img src="https://img.icons8.com/ios-filled/50/228B22/delivery.png" alt="Secure Shopping" />
+    </div>
+    <h3>Fast Delivery</h3>
+    <i class="fas fa-shipping-fast"></i>
+    <p>Your order, your hands — in just 2–3 days!</p>
+  </div>
+  <div class="feature-box" data-aos="fade-up">
+    <div class="icon-circle green">
+      <img src="https://cdn-icons-png.flaticon.com/512/891/891419.png" alt="Free Shipping" />
+    </div>
+  <h3>Free Shipping</h3>  
+  <i class="fas fa-box"></i>
+  <p>Free shipping on orders over $50. Fast & reliable delivery.</p>
+  </div>
+
+  <div class="feature-box" data-aos="fade-up">
+    <div class="icon-circle teal">
+      <img src="https://img.icons8.com/ios-filled/50/008080/security-checked.png" alt="Secure Shopping" />
+    </div>
+    <h3>Secure Shopping</h3>
+    <i class="fas fa-lock"></i>
+    <p>Your payment information is always safe and secure with us.</p>
+  </div>
+
+  <div class="feature-box" data-aos="fade-up">
+    <div class="icon-circle orange">
+      <img src="https://img.icons8.com/ios-filled/50/FF8C00/headset.png" alt="Support" />
+    </div>
+    <h3>24/7 Support</h3>
+    <i class="fas fa-headset"></i>
+    <p>Get help anytime with our dedicated customer support team.</p>
+  </div>
+</section>
+
+  <section class="categories">
+    <h2>Product Categories</h2>
+    <div class="grid">
+      <div class="card">Snacks</div>
+      <div class="card">Tech</div>
+      <div class="card">Fashion</div>
+    </div>
+  </section>
+
+  <section class="featured">
+    <h2>Featured Products</h2>
+    <div class="grid">
+      <div class="product">
+        <img src="" alt="Product">
+        <p>Product Name</p>
+        <p>$10.00</p>
+        <button>Add to Cart</button>
+      </div>
+      <!-- Repeat for more products -->
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CeyloMart. All rights reserved.</p>
+  </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1200 });
+  </script>
+  <script src="Ceylomart.js"></script>
+</body>
+</html>
