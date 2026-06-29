@@ -7,6 +7,18 @@
   --white: #fff;
   --black: #000000;
   --border: #e7f4e7;
+  --bg: #f8fff8;
+  --bg-soft: #f9f9f9;
+  --surface: #ffffff;
+  --surface-alt: #f3f7f3;
+  --text: var(--darkcharcoal);
+  --muted: #5c5c5c;
+  --header-bg: rgba(219, 255, 220, 0.92);
+  --card-bg: #ffffff;
+  --card-border: #e7f4e7;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --shadow-strong: 0 16px 35px rgba(0, 0, 0, 0.1);
+  --hero-panel-bg: rgba(0, 0, 0, 0.28);
 }
 
 * {
@@ -21,10 +33,11 @@ body {
   font-family: 'Poppins', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(180deg, #f8fff8 0%, #f9f9f9 100%);
-  color: var(--darkcharcoal);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+  color: var(--text);
   line-height: 1.6;
 }
+
 
 a {
   color: inherit;
@@ -37,7 +50,7 @@ img {
 }
 
 header {
-  background-color: rgba(219, 255, 220, 0.92);
+  background-color: var(--header-bg);
   padding: 1rem 2rem;
   display: flex;
   flex-wrap: wrap;
@@ -51,7 +64,7 @@ header {
 }
 
 .logo {
-  color: var(--darkcharcoal);
+  color: var(--text);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -78,7 +91,7 @@ header {
 }
 
 .nav a {
-  color: var(--darkcharcoal);
+  color: var(--text);
   padding: 10px 0;
   position: relative;
   transition: color 0.3s ease;
@@ -116,7 +129,8 @@ header {
   border: 2px solid var(--Freshgreen);
   border-radius: 999px;
   min-width: 220px;
-  color: var(--black);
+  color: var(--text);
+  background: var(--surface);
   transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -129,7 +143,7 @@ header {
 .cart-btn {
   background: none;
   border: none;
-  color: var(--darkcharcoal);
+  color: var(--text);
   font-size: 1.1rem;
   cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease;
@@ -138,6 +152,44 @@ header {
 .cart-btn:hover {
   transform: scale(1.1);
   color: var(--Freshgreen);
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 2px solid var(--Freshgreen);
+  color: var(--text);
+  padding: 0.65rem 0.95rem;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.03);
+  background: rgba(76, 175, 80, 0.12);
+}
+
+.theme-toggle i {
+  display: inline-flex;
+  width: 1rem;
+  justify-content: center;
+}
+
+.theme-toggle .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .hamburger {
@@ -150,7 +202,7 @@ header {
 .hamburger span {
   width: 25px;
   height: 3px;
-  background: var(--darkcharcoal);
+  background: var(--text);
   border-radius: 2px;
   transition: 0.3s;
 }
@@ -303,7 +355,7 @@ header {
 .cards-grid {
   display: grid;
   gap: 1.25rem;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
@@ -319,30 +371,32 @@ header {
 .feature-box,
 .category-card,
 .product-card {
-  background: #fff;
-  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.feature-box {
+  text-align: center;
 }
 
 .feature-box:hover,
 .category-card:hover,
 .product-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.1);
-}
-
-.feature-box {
-  padding: 1.5rem;
-  text-align: center;
+  box-shadow: var(--shadow-strong);
 }
 
 .icon-circle {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  margin: 0 auto 1rem;
+  margin: 1rem auto 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -366,12 +420,12 @@ header {
 }
 
 .feature-box h3 {
-  margin: 0 0 0.4rem;
+  margin: 0.5rem 0.5rem 0.5rem;
   color: #1d3557;
 }
 
 .feature-box p {
-  margin: 0;
+  margin: 0.5rem 0.5rem 0.5rem;
   color: #606060;
   font-size: 0.96rem;
 }
@@ -421,6 +475,127 @@ header {
 .btn-small:hover {
   background-color: var(--Freshgreen);
   transform: translateY(-2px);
+}
+
+body.dark-theme {
+  --bg: #08110f;
+  --bg-soft: #0f1916;
+  --surface: #111b18;
+  --surface-alt: #16221d;
+  --text: #e8efe8;
+  --muted: #aab8aa;
+  --header-bg: rgba(18, 28, 22, 0.92);
+  --card-bg: #12231f;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+  --shadow-strong: 0 18px 45px rgba(0, 0, 0, 0.68);
+  --hero-panel-bg: rgba(0, 0, 0, 0.42);
+}
+
+body.dark-theme {
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+  color: var(--text);
+}
+
+body.dark-theme .nav {
+  background: rgba(10, 15, 12, 0.98);
+}
+
+body.dark-theme .nav a {
+  color: var(--text);
+}
+
+body.dark-theme .nav a:hover,
+body.dark-theme .nav a.active {
+  color: var(--Freshgreen);
+}
+
+body.dark-theme .header-right input,
+body.dark-theme .contact-form input,
+body.dark-theme .contact-form textarea {
+  background: #0f1b17;
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--text);
+}
+
+body.dark-theme .header-right input::placeholder,
+body.dark-theme .contact-form input::placeholder,
+body.dark-theme .contact-form textarea::placeholder {
+  color: rgba(234, 242, 238, 0.65);
+}
+
+body.dark-theme .feature-box,
+body.dark-theme .category-card,
+body.dark-theme .product-card,
+body.dark-theme .category-list-card,
+body.dark-theme .about-card,
+body.dark-theme .leader-card,
+body.dark-theme .contact-card,
+body.dark-theme .promo-banner {
+  background: var(--card-bg);
+  border-color: var(--card-border);
+  box-shadow: var(--shadow);
+}
+
+body.dark-theme .about-hero,
+body.dark-theme .contact-hero {
+  background: linear-gradient(135deg, rgba(10, 20, 18, 0.98) 0%, rgba(20, 60, 42, 0.9) 50%, rgba(38, 123, 75, 0.85) 100%);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+body.dark-theme .features,
+body.dark-theme .categories,
+body.dark-theme .featured,
+body.dark-theme main.shop-page,
+body.dark-theme main.categories-page,
+body.dark-theme main.about-page,
+body.dark-theme main.contact-page {
+  background: transparent;
+}
+
+body.dark-theme .section-heading p,
+body.dark-theme .feature-box p,
+body.dark-theme .card-content p,
+body.dark-theme .category-list-card ul,
+body.dark-theme .about-hero p,
+body.dark-theme .contact-hero p,
+body.dark-theme .contact-card ul,
+body.dark-theme .leader-card ul,
+body.dark-theme .category-card .card-content p,
+body.dark-theme .product-card .card-content p {
+  color: var(--muted);
+}
+
+body.dark-theme .feature-box h3,
+body.dark-theme .card-content h3,
+body.dark-theme .category-list-card h3,
+body.dark-theme .about-card h3,
+body.dark-theme .leader-card h3,
+body.dark-theme .contact-card h3,
+body.dark-theme .category-hero-card h3 {
+  color: var(--Freshgreen);
+}
+
+body.dark-theme .hero-content {
+  background: rgba(0, 0, 0, 0.42);
+}
+
+body.dark-theme .promo-banner {
+  background: linear-gradient(90deg, rgba(20, 40, 30, 0.84) 0%, rgba(15, 25, 18, 0.92) 100%);
+}
+
+body.dark-theme footer {
+  background: #07100d;
+  color: #c8d1c5;
+}
+
+body.dark-theme .footer-links a:hover {
+  color: var(--warmorange);
+}
+
+body.dark-theme .theme-toggle {
+  border-color: rgba(76, 175, 76, 0.55);
 }
 
 .promo-banner {
@@ -572,7 +747,7 @@ main.contact-page {
   margin: 0 auto 2rem;
   padding: 3rem 2rem;
   border-radius: 24px;
-  background: linear-gradient(135deg, #e7f7e8 0%, #fffdf5 100%);
+  background: linear-gradient(135deg, #c9fccc 0%, #fef7cb 100%);
   border: 1px solid var(--border);
 }
 
@@ -639,7 +814,7 @@ main.contact-page {
   margin: 0 auto 2rem;
   padding: 3rem 2rem;
   border-radius: 24px;
-  background: linear-gradient(135deg, #f4fbf4 0%, #fbf7ec 100%);
+  background: linear-gradient(135deg, #c9fccc 0%, #fef7cb 100%);
   border: 1px solid var(--border);
 }
 
