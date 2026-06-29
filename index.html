@@ -10,8 +10,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* Loader overlay styles (minimal, scoped) */
+    .page-loader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;background:#fff;z-index:9999}
+    .page-loader .logo-sm{width:96px;height:96px;object-fit:contain;margin-bottom:12px}
+    .page-loader .spinner{width:56px;height:56px;border-radius:50%;border:6px solid #eee;border-top-color:#008080;animation:spin 10s linear infinite;margin-bottom:10px}
+    .page-loader .loading-text{font-weight:600;color:#222}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .page-loader.fade-out{opacity:0;transition:opacity .45s ease}
+  </style>
 </head>
 <body>
+  <div id="page-loader" class="page-loader" aria-hidden="false">
+    <img class="logo-sm" src="Pictures/Ceylomart Logo.png" alt="CeyloMart" />
+    <div class="spinner" aria-hidden="true"></div>
+    <div class="loading-text">Loading CeyloMart…</div>
+  </div>
 <header class="header" data-aos="fade-down">
   <div class="logo">
     <a href="index.html"><img src="Pictures/Ceylomart Logo.png" alt="CeyloMart Logo" /></a>
@@ -204,9 +218,18 @@
   </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1200 });
-  </script>
+    <script>
+      // Hide loader when page fully loads (or timeout fallback)
+      window.addEventListener('load', function(){
+        var loader = document.getElementById('page-loader');
+        if(!loader) return;
+        loader.classList.add('fade-out');
+        setTimeout(function(){
+          if(loader && loader.parentNode) loader.parentNode.removeChild(loader);
+        }, 500);
+      });
+      AOS.init({ duration: 1200 });
+    </script>
   <script src="Ceylomart.js"></script>
 </body>
 </html>

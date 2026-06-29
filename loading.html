@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Loading… | CeyloMart</title>
+  <link rel="icon" type="image/png" href="Pictures/Ceylomart Logo.png" />
+  <link rel="stylesheet" href="Ceylomart.css" />
+  <style>
+    :root{--bg:#ffffff;--accent:#008080}
+    html,body{height:100%;margin:0;font-family:inherit}
+    .loader-wrap{height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;background:var(--bg);color:#222}
+    .logo-sm{width:96px;height:96px;object-fit:contain;margin-bottom:18px}
+    .spinner{width:64px;height:64px;border-radius:50%;border:6px solid #eee;border-top-color:var(--accent);animation:spin 1s linear infinite;margin-bottom:14px}
+    .loading-text{font-weight:600;letter-spacing:0.2px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .fade-out{opacity:0;transition:opacity .5s ease}
+  </style>
+</head>
+<body>
+  <main class="loader-wrap" id="loader">
+    <img class="logo-sm" src="Pictures/Ceylomart Logo.png" alt="CeyloMart logo" />
+    <div class="spinner" aria-hidden="true"></div>
+    <div class="loading-text">Loading CeyloMart…</div>
+  </main>
+
+  <script>
+    // Optional: simulate asset warm-up then redirect to index
+    const MIN_MS = 900;
+    const MAX_MS = 1600;
+    const wait = Math.floor(Math.random()*(MAX_MS-MIN_MS))+MIN_MS;
+    setTimeout(()=>{
+      document.getElementById('loader').classList.add('fade-out');
+      setTimeout(()=> location.href = 'index.html', 450);
+    }, wait);
+  </script>
+</body>
+</html>
