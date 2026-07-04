@@ -17,7 +17,7 @@ if (hamburger && nav) {
 }
 
 const navLinks = document.querySelectorAll('.nav a');
-const currentUrl = window.location.pathname.split('/').pop();
+const currentUrl = decodeURIComponent(window.location.pathname.split('/').pop() || '');
 
 navLinks.forEach((link) => {
   const linkHref = link.getAttribute('href');
@@ -73,3 +73,50 @@ function createThemeToggle() {
 
 createThemeToggle();
 applyTheme(getPreferredTheme());
+
+window.addEventListener('DOMContentLoaded', () => {
+  const filterButtons = document.querySelectorAll('button[data-filter]');
+  const productCards = document.querySelectorAll('.product-card');
+  const noResults = document.querySelector('.no-results');
+
+  function updateFilterActive(button) {
+    filterButtons.forEach((btn) => btn.classList.remove('active'));
+    filterButtons.forEach((btn) => btn.setAttribute('aria-pressed', 'false'));
+    button.classList.add('active');
+    button.setAttribute('aria-pressed', 'true');
+  }
+
+  function filterProducts(filter) {
+    let visibleCount = 0;
+
+    productCards.forEach((card) => {
+      const status = card.dataset.status;
+      const category = card.dataset.category;
+      const isMatch =
+        filter === 'all' ||
+        status === filter ||
+        category === filter ||
+        card.textContent.toLowerCase().includes(filter);
+
+      card.hidden = !isMatch;
+      if (isMatch) visibleCount += 1;
+    });
+
+    if (noResults) {
+      noResults.hidden = visibleCount > 0;
+    }
+  }
+
+  filterButtons.forEach((button) => {
+    button.setAttribute('aria-pressed', button.classList.contains('active') ? 'true' : 'false');
+    button.addEventListener('click', () => {
+      const filterValue = button.dataset.filter;
+      updateFilterActive(button);
+      filterProducts(filterValue);
+    });
+  });
+
+  if (filterButtons.length && productCards.length) {
+    filterProducts('all');
+  }
+});
