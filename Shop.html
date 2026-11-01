@@ -44,23 +44,51 @@
 </header>
 
   <main class="shop-page">
-    <section class="about-hero" data-aos="fade-up">
-      <div>
-        <p class="promo-label">New arrivals</p>
-        <h1>Shop our latest picks</h1>
-        <p>Browse curated essentials, smart gadgets, and everyday favorites at great prices.</p>
+    <section class="shop-hero" aria-labelledby="shop-title">
+      <div class="shop-hero-content">
+        <p class="shop-eyebrow">A little something for every day</p>
+        <h1 id="shop-title">Good finds.<br>Better everyday.</h1>
+        <p>Thoughtful picks for your home, your routine, and everything in between.</p>
+        <a class="shop-hero-link" href="#collection">Explore the collection <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
       </div>
+      <div class="shop-hero-note"><i class="fa-solid fa-box-open" aria-hidden="true"></i><span>Everyday essentials, all in one place</span></div>
     </section>
 
-    <div class="filter-bar" data-aos="fade-up">
-      <button type="button" class="filter-pill active" data-filter="all">All</button>
-      <button type="button" class="filter-pill" data-filter="tech">Tech</button>
-      <button type="button" class="filter-pill" data-filter="fashion">Fashion</button>
-      <button type="button" class="filter-pill" data-filter="home">Home</button>
-      <button type="button" class="filter-pill" data-filter="snacks">Snacks</button>
-    </div>
+    <section class="collection-section" id="collection" aria-labelledby="collection-title">
+      <div class="collection-heading">
+        <div>
+          <p class="shop-eyebrow">The CeyloMart edit</p>
+          <h2 id="collection-title">Shop the collection</h2>
+          <p>Browse our current selection and find a new everyday favorite.</p>
+        </div>
+        <div class="collection-tools">
+          <label class="collection-search">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <span class="visually-hidden">Search products</span>
+            <input id="collection-search" type="search" placeholder="Search products" autocomplete="off">
+          </label>
+          <label class="collection-sort-label" for="sort-products">Sort by</label>
+          <select id="sort-products" class="collection-sort">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: low to high</option>
+            <option value="price-high">Price: high to low</option>
+            <option value="name">Name: A to Z</option>
+          </select>
+        </div>
+      </div>
 
-    <section class="cards-grid" data-aos="fade-up">
+      <div class="collection-controls">
+        <div class="filter-bar" role="group" aria-label="Filter products by category">
+          <button type="button" class="filter-pill active" data-filter="all" aria-pressed="true">All products</button>
+          <button type="button" class="filter-pill" data-filter="tech" aria-pressed="false">Tech</button>
+          <button type="button" class="filter-pill" data-filter="fashion" aria-pressed="false">Fashion</button>
+          <button type="button" class="filter-pill" data-filter="home" aria-pressed="false">Home &amp; living</button>
+          <button type="button" class="filter-pill" data-filter="snacks" aria-pressed="false">Pantry</button>
+        </div>
+        <p class="collection-count" id="collection-count" aria-live="polite"></p>
+      </div>
+
+      <div class="cards-grid collection-grid" id="product-grid">
       <!-- Tech -->
       <article class="product-card" data-category="tech">
         <img class="product-image" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80" alt="Smartphone" />
@@ -75,7 +103,7 @@
       </article>
 
       <article class="product-card" data-category="tech">
-        <img class="product-image" src="https://images.unsplash.com/photo-1518444021700-8f6b9b41e0b3?auto=format&fit=crop&w=900&q=80" alt="Wireless headphones" />
+        <img class="product-image" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80" alt="Wireless headphones" />
         <div class="card-content">
           <h3>NoisePro Headphones</h3>
           <p>Active noise cancellation and 30 hours battery life.</p>
@@ -99,7 +127,7 @@
       </article>
 
       <article class="product-card" data-category="tech">
-        <img class="product-image" src="https://images.unsplash.com/photo-1585386959984-a4155222f6f1?auto=format&fit=crop&w=900&q=80" alt="Bluetooth speaker" />
+        <img class="product-image" src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=900&q=80" alt="Bluetooth speaker" />
         <div class="card-content">
           <h3>Pulse Portable Speaker</h3>
           <p>Compact design with rich bass and water resistance.</p>
@@ -112,7 +140,7 @@
 
       <!-- Fashion -->
       <article class="product-card" data-category="fashion">
-        <img class="product-image" src="https://images.unsplash.com/photo-1526178619404-1379c0d2f9b3?auto=format&fit=crop&w=900&q=80" alt="Sneakers" />
+        <img class="product-image" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80" alt="Sneakers" />
         <div class="card-content">
           <h3>Everyday Sneakers</h3>
           <p>Comfortable, lightweight sneakers for daily wear.</p>
@@ -148,7 +176,7 @@
       </article>
 
       <article class="product-card" data-category="fashion">
-        <img class="product-image" src="https://images.unsplash.com/photo-1520975914436-9b8d5d3f35b7?auto=format&fit=crop&w=900&q=80" alt="Light jacket" />
+        <img class="product-image" src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=900&q=80" alt="Light jacket" />
         <div class="card-content">
           <h3>Windbreaker Jacket</h3>
           <p>Water-resistant jacket, perfect for unpredictable weather.</p>
@@ -161,7 +189,7 @@
 
       <!-- Home -->
       <article class="product-card" data-category="home">
-        <img class="product-image" src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=900&q=80" alt="Table lamp" />
+        <img class="product-image" src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80" alt="Table lamp" />
         <div class="card-content">
           <h3>Table Lamp</h3>
           <p>Minimal lamp with warm LED lighting for cozy rooms.</p>
@@ -173,7 +201,7 @@
       </article>
 
       <article class="product-card" data-category="home">
-        <img class="product-image" src="https://images.unsplash.com/photo-1556911220-e15b29be8c5d?auto=format&fit=crop&w=900&q=80" alt="Cushion" />
+        <img class="product-image" src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=900&q=80" alt="Cushion" />
         <div class="card-content">
           <h3>Decor Cushion</h3>
           <p>Soft, patterned cushion to add color to your sofa.</p>
@@ -185,7 +213,7 @@
       </article>
 
       <article class="product-card" data-category="home">
-        <img class="product-image" src="https://images.unsplash.com/photo-1582719478141-7d7b3b0f0b1e?auto=format&fit=crop&w=900&q=80" alt="Kitchen kettle" />
+        <img class="product-image" src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=900&q=80" alt="Kitchen kettle" />
         <div class="card-content">
           <h3>Electric Kettle</h3>
           <p>Fast-boil kettle with automatic shut-off and sleek finish.</p>
@@ -197,7 +225,7 @@
       </article>
 
       <article class="product-card" data-category="home">
-        <img class="product-image" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Storage organizer" />
+        <img class="product-image" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Storage organizer" />
         <div class="card-content">
           <h3>Storage Organizer</h3>
           <p>Multi-compartment organizer to keep surfaces tidy.</p>
@@ -222,7 +250,7 @@
       </article>
 
       <article class="product-card" data-category="snacks">
-        <img class="product-image" src="https://images.unsplash.com/photo-1563214526-c6f4a3d4e6f7?auto=format&fit=crop&w=900&q=80" alt="Granola" />
+        <img class="product-image" src="https://images.unsplash.com/photo-1517093157656-b9eccef91cb1?auto=format&fit=crop&w=900&q=80" alt="Granola" />
         <div class="card-content">
           <h3>Honey Granola</h3>
           <p>Crispy clusters sweetened with real honey.</p>
@@ -234,7 +262,7 @@
       </article>
 
       <article class="product-card" data-category="snacks">
-        <img class="product-image" src="https://images.unsplash.com/photo-1604908177522-3c7f4b5b8d6b?auto=format&fit=crop&w=900&q=80" alt="Chocolate bar" />
+        <img class="product-image" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80" alt="Chocolate bar" />
         <div class="card-content">
           <h3>Dark Chocolate</h3>
           <p>70% cocoa dark chocolate, rich and slightly bitter.</p>
@@ -246,7 +274,7 @@
       </article>
 
       <article class="product-card" data-category="snacks">
-        <img class="product-image" src="https://images.unsplash.com/photo-1585238342026-1f0b25a6a7c2?auto=format&fit=crop&w=900&q=80" alt="Potato chips" />
+        <img class="product-image" src="https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=900&q=80" alt="Potato chips" />
         <div class="card-content">
           <h3>Sea Salt Chips</h3>
           <p>Lightly salted kettle-cooked chips with crunchy texture.</p>
@@ -257,666 +285,8 @@
         </div>
       </article>
 
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-
-            <article class="product-card" data-category="home">
-        <img class="product-image" src="https://hauslondon.com/cdn/shop/files/PH-2-1-Portable-ES0133.jpg" alt="Portable lamp" />
-        <div class="card-content">
-          <h3>Portable Lamp</h3>
-          <p>Warm lighting designed for cozy corners and bedside tables.</p>
-          <div class="product-meta">
-            <span class="price">$29.99</span>
-            <a href="Shop.html" class="btn-small">Add to cart</a>
-          </div>
-        </div>
-      </article>
-      
+      </div>
+      <p class="no-results" id="collection-empty" hidden>No products match your search. Try another name or category.</p>
     </section>
   </main>
 

@@ -6,7 +6,6 @@
   <title>About | CeyloMart</title>
   <link rel="stylesheet" href="Ceylomart.css" />
   <link rel="icon" type="image/png" href="Pictures/Ceylomart Logo.png" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
@@ -19,13 +18,13 @@
   </div>
 
   <!--Hamburger -->
-  <div class="hamburger">
+  <button class="hamburger" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">
     <span></span>
     <span></span>
     <span></span>
-  </div>
+  </button>
 
-  <nav class="nav">
+  <nav class="nav" id="primary-navigation">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="Shop.html">Shop</a></li>
@@ -36,104 +35,80 @@
   </nav>
 
   <div class="header-right">
-    <input class="Search" placeholder="Search..." />
-    <button class="cart-btn" title="Cart">
+    <input class="Search" type="search" placeholder="Search..." aria-label="Search CeyloMart" />
+    <button class="cart-btn" type="button" title="Cart" aria-label="Shopping cart">
       <i class="fa-solid fa-cart-shopping"></i>
     </button>
   </div>
 </header>
 
   <main class="about-page">
-    <section class="about-hero" data-aos="fade-up">
-      <div>
+    <section class="about-hero" aria-labelledby="about-title" data-aos="fade-up">
+      <div class="about-hero-content">
         <p class="promo-label">About CeyloMart</p>
-        <h1>Bringing quality and convenience closer to every customer</h1>
-        <p>CeyloMart is a modern shopping destination built to make everyday buying easier, faster, and more enjoyable.</p>
+        <h1 id="about-title">Everyday finds, thoughtfully brought together.</h1>
+        <p>We make it easier to find useful things for your home, your routine, and everything in between.</p>
+        <div class="about-hero-actions">
+          <a href="Shop.html#collection" class="btn">Explore the shop <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          <a href="Contact.html" class="about-text-link">Get in touch</a>
+        </div>
       </div>
     </section>
 
-<!-- ================= OUR STORY ================= -->
-
-<section class="about-story">
-
-    <div class="story-container">
-
-        <div class="story-content">
-            <h2>Our Story</h2>
-
-            <p>
-                Founded in 2014, CeyloMart started as a small online retailer
-                with a big dream: to create a marketplace where customers
-                could find high-quality products at affordable prices while
-                enjoying exceptional customer service.
-            </p>
-
-            <p>
-                What began as a passion project has grown into a thriving
-                ecommerce platform serving customers across the globe.
-                We've carefully curated our product selection to include
-                only the best items from trusted suppliers and emerging brands.
-            </p>
-
-            <p>
-                Today, we're proud to offer thousands of products across
-                multiple categories, from the latest electronics to premium
-                fashion items, all backed by our commitment to quality
-                and customer satisfaction.
-            </p>
+    <section class="about-story" aria-labelledby="story-title">
+      <div class="story-container">
+        <div class="story-content" data-aos="fade-up">
+          <p class="promo-label">A little about us</p>
+          <h2 id="story-title">Shopping should feel simple.</h2>
+          <p>CeyloMart brings together everyday essentials and little discoveries across tech, fashion, home, and pantry. Instead of searching all over, you can browse a thoughtful mix of useful finds in one place.</p>
+          <p>We believe a good shopping experience is about more than what’s in the basket. It should be easy to explore, clear to navigate, and supported by a real team when you need help.</p>
+          <a href="Categories.html" class="about-story-link">See what you’ll find here <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
         </div>
+        <figure class="story-image" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="A small team sharing ideas around a table" loading="lazy">
+          <figcaption>Good finds, with a more human touch.</figcaption>
+        </figure>
+      </div>
+    </section>
 
-        <div class="story-image">
-            <img src="https://www.superoffice.com/globalassets/blog/2025/one-click-reporting/dashboard.png" alt="Our Story">
-        </div>
+    <section class="impact" aria-labelledby="impact-title">
+      <div class="about-section-heading" data-aos="fade-up">
+        <p class="promo-label">The CeyloMart difference</p>
+        <h2 id="impact-title">The little things that make it easier</h2>
+        <p>Useful details, clear choices, and everyday shopping in one place.</p>
+      </div>
+      <div class="impact-container">
+        <article class="impact-card" data-aos="fade-up">
+          <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+          <h3 aria-label="4 curated categories"><span data-count="4">4</span></h3>
+          <span>Curated categories</span>
+        </article>
+        <article class="impact-card" data-aos="fade-up" data-aos-delay="75">
+          <i class="fa-solid fa-truck-fast" aria-hidden="true"></i>
+          <h3 aria-label="Free shipping on orders over 50 dollars"><span data-prefix="$" data-count="50">$50</span></h3>
+          <span>Free shipping on orders over</span>
+        </article>
+        <article class="impact-card" data-aos="fade-up" data-aos-delay="150">
+          <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+          <h3 aria-label="16 product picks in the shop"><span data-count="16">16</span></h3>
+          <span>Everyday product picks</span>
+        </article>
+        <article class="impact-card" data-aos="fade-up" data-aos-delay="225">
+          <i class="fa-regular fa-heart" aria-hidden="true"></i>
+          <h3 aria-label="One place for everyday finds"><span data-count="1">1</span></h3>
+          <span>Place for everyday finds</span>
+        </article>
+      </div>
+    </section>
 
-    </div>
-
-</section>
-
-<!-- ================= OUR IMPACT ================= -->
-
-<section class="impact">
-
-    <h2>Our Impact</h2>
-
-    <p class="impact-text">
-        Numbers that showcase our commitment to excellence and customer satisfaction.
-    </p>
-
-    <div class="impact-container">
-
-        <div class="impact-card">
-            <i class="fa-solid fa-users"></i>
-            <h3>50,000+</h3>
-            <span>Happy Customers</span>
-        </div>
-
-        <div class="impact-card">
-            <i class="fa-solid fa-award"></i>
-            <h3>1M+</h3>
-            <span>Products Sold</span>
-        </div>
-
-        <div class="impact-card">
-            <i class="fa-solid fa-globe"></i>
-            <h3>25+</h3>
-            <span>Countries Served</span>
-        </div>
-
-        <div class="impact-card">
-            <i class="fa-regular fa-heart"></i>
-            <h3>10+</h3>
-            <span>Years of Service</span>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- Font Awesome -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <section class="about-cta" aria-labelledby="about-cta-title" data-aos="fade-up">
+      <div>
+        <p class="promo-label">Your next good find is waiting</p>
+        <h2 id="about-cta-title">A little browsing goes a long way.</h2>
+      </div>
+      <a href="Shop.html#collection" class="btn">Browse the collection <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </section>
+  </main>
 
 <footer class="footer">
     <div class="footer-container">
@@ -220,7 +195,54 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1200 });
+      AOS.init({
+        duration: 800,
+        disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      });
+    </script>
+  <script>
+    const impactNumbers = document.querySelectorAll('[data-count]');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function animateImpactNumber(number) {
+      const target = Number(number.dataset.count);
+      const prefix = number.dataset.prefix || '';
+      const suffix = number.dataset.suffix || '';
+
+      if (prefersReducedMotion) {
+        number.textContent = `${prefix}${target}${suffix}`;
+        return;
+      }
+
+      const duration = 900;
+      const startedAt = performance.now();
+
+      function updateNumber(now) {
+        const progress = Math.min((now - startedAt) / duration, 1);
+        const easedProgress = 1 - (1 - progress) ** 3;
+        number.textContent = `${prefix}${Math.round(target * easedProgress)}${suffix}`;
+        if (progress < 1) {
+          requestAnimationFrame(updateNumber);
+        }
+      }
+
+      requestAnimationFrame(updateNumber);
+    }
+
+    if ('IntersectionObserver' in window) {
+      const impactObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateImpactNumber(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      impactNumbers.forEach((number) => impactObserver.observe(number));
+    } else {
+      impactNumbers.forEach(animateImpactNumber);
+    }
   </script>
   <script src="Ceylomart.js"></script>
 </body>
